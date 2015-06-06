@@ -1,8 +1,90 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  margin:0;
+  background-color:bisque;  
 }
 
-a {
-  color: #00B7FF;
+header {
+  text-align:center;
+  color:darkblue;
+  
+  font-weight:bold;
+  background-color:lightblue;
+  width:25%;  
+  margin-left: calc(25% + 25%);
+  border-radius:15px;
+  border:5px solid darkblue;
+  margin-bottom:15px;
+  margin-top:15px;
 }
+
+header p {
+  font-size:200%;
+  margin:0;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+
+nav {
+  float:left;
+  width: 25%;
+  margin-top:50px;
+}
+
+nav ul {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 2em;
+  background-color:lightblue;
+  margin-right:20px;
+  margin-left:0px;
+  border-top: 5px solid darkblue;
+  border-right: 5px solid darkblue;
+  border-bottom: 5px solid darkblue;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;  
+  padding:0;  
+}
+
+nav li {
+  list-style-type: none;
+  color:darkblue;
+  padding:10px;
+  padding-left:30px;  
+}
+
+nav a {
+  text-decoration:none;
+}
+
+nav li a {
+  color: inherit;
+  font-weight:bold;
+}
+
+nav li:hover {
+  color:lightblue;
+  background-color:darkblue;
+}
+
+#section_body {
+  background-color:burlywood;
+  display:inline-block;
+  width:75%;
+  padding:20px 40px 40px 40px;  
+  
+  box-sizing: border-box;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius:25px;
+  min-height:450px
+}
+
+footer {
+  clear:both;
+  text-align:right;
+  margin-top:25px;
+  margin-bottom:15px;
+  margin-right:50px;
+}
+
+

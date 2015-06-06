@@ -1,0 +1,16 @@
+#author_desc, #author_photo, #author_video {
+  float:left;
+  width:33%;
+  text-align:center;
+  display:block;  
+}
+
+#author_photo img, #author_video iframe {
+  width:100%;  
+}
+
+#author_photo img {
+  border:1px solid gray;
+  border-radius:5px;
+  border-top-left-radius:35px;
+}
