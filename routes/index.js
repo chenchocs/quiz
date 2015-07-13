@@ -6,6 +6,7 @@ var quizController = require ("../controllers/quiz_controller");
 var quizAuthor = require ("../controllers/quiz_author");
 
 router.get("/", indexController.index);
+router.param("quizId", quizController.load);
 router.get("/quizes", quizController.index);
 router.get("/quizes/:quizId(\\d+)", quizController.show);
 router.get("/quizes/:quizId(\\d+)/answer", quizController.answer);
