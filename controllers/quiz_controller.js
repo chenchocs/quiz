@@ -12,14 +12,12 @@ exports.index = function(req, res) {
 };
 
 exports.show = function (req, res) {
-	console.log("Pregunta: "+ req.params.quizId);
 	models.Quiz.findById (req.params.quizId).then(function(quiz) {
 		res.render("quizes/show", { quiz: quiz });
 	});
 };
 
 exports.answer = function(req, res) {
-	console.log("Respuesta: "+ req.params.quizId +" / "+ req.query.respuesta);
 	models.Quiz.findById (req.params.quizId).then(function(quiz) {
 		if (req.query.respuesta === quiz.respuesta) {
 			res.render("quizes/answer", { respuesta: "Correcto"});
