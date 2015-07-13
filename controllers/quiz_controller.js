@@ -1,14 +1,27 @@
 var models = require ("../models/models.js");
 
-exports.question = function (req, res) {
-	models.Quiz.findAll().then(function(quiz) {
-		res.render("quizes/question", {title: "Turno de preguntas:", pregunta: quiz[0].pregunta});
+exports.index = function(req, res) {
+	models.Quiz.findAll().then(
+		function(quizes) {
+			res.render("quizes/index", { quizes: quizes });
+		}, 
+		function(err) {
+			res.render("quizes/error", { error: err });
+		}
+	);
+};
+
+exports.show = function (req, res) {
+	console.log("Pregunta: "+ req.params.quizId);
+	models.Quiz.findById (req.params.quizId).then(function(quiz) {
+		res.render("quizes/show", { quiz: quiz });
 	});
 };
 
 exports.answer = function(req, res) {
-	models.Quiz.findAll().then(function(quiz) {
-		if (req.query.respuesta === quiz[0].respuesta) {
+	console.log("Respuesta: "+ req.params.quizId +" / "+ req.query.respuesta);
+	models.Quiz.findById (req.params.quizId).then(function(quiz) {
+		if (req.query.respuesta === quiz.respuesta) {
 			res.render("quizes/answer", { respuesta: "Correcto"});
 		} else {
 			res.render("quizes/answer", { respuesta: "Incorrecto"});

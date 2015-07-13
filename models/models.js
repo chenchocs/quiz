@@ -3,10 +3,6 @@ var path = require("path");
 var util = require("util");
 
 // Extraemos los elementos de las urls relativas a las bases de datos
-console.log("hoygan esto es env: "+ util.inspect(process.env));
-console.log("hoygan estamos en: "+ process.env.GDMSESSION);
-console.log("hoygan databaseurl: "+ process.env.DATABASE_URL);
-
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name		= (url[6] || null);
 var user			= (url[2] || null);
@@ -44,6 +40,20 @@ sequelize.sync().then(function() {
 				respuesta:	"Roma"
 			}).then(function() {
 				console.log("Base de datos inicializada");
+			});
+
+			Quiz.create({
+				pregunta:	"Capital de Portugal",
+				respuesta:	"Lisboa"
+			}).then(function() {
+				console.log("Base de datos bi-inicializada");
+			});
+
+			Quiz.create({
+				pregunta:	"Capital de Francia",
+				respuesta:	"París"
+			}).then(function() {
+				console.log("Base de datos trinicializada");
 			});
 		}
 	});

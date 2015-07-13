@@ -1,2 +1,6 @@
 <p><%= respuesta %></p>
-<a href="/quizes/question">Inténtalo de nuevo</a>
+<% if (respuesta === "Correcto") { %>
+	<a href="../../quizes/">Volver a preguntas</a>
+<% } else { %>
+	<a href="javascript:history.back()">Inténtalo de nuevo</a>
+<% } %>
