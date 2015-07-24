@@ -5,6 +5,7 @@
 		<title>Quiz!</title>
 		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link rel='stylesheet' href='/stylesheets/author.css' />
+		<link rel='stylesheet' href='/stylesheets/form.css' />
 	</head>
 
 	<body>
@@ -21,6 +22,16 @@
 		</nav>
 
 		<section id="section_body">
+			<% if (errors.length) { %>
+				<span id="ErrorMessage">
+					<p> Corregir errores: </p>
+					<% for (var i in errors) { %>
+						<span> <%= errors[i].message %> </span>
+						<br>
+					<% } %>
+				</span>
+			<% } %>
+
 			<%- body %>
 		</section>
 

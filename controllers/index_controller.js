@@ -1,3 +1,3 @@
 exports.index = function (req, res) {
-	res.render("index", { title: "Quiz!"});
+	res.render("index", { title: "Quiz!", errors: []});
 };

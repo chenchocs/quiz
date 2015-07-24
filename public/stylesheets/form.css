@@ -1,0 +1,13 @@
+.form-table {
+	display:table;
+}
+
+.form-row {
+	display:table-row;
+}
+
+.form-cell {
+	display:table-cell;
+	margin:2px;
+	margin-left:15px;
+}
