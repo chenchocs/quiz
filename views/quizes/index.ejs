@@ -9,11 +9,14 @@
 
 <p>Lista de preguntas:</p>
 
-<ul>
+<ul class="form-table">
 	<% var i; for (i=0; i < quizes.length; i++) { %>
-		<li>
-			<a href="/quizes/<%= quizes[i].id %>">
+		<li class="form-row">
+			<a class="form-cell" href="/quizes/<%= quizes[i].id %>">
 				<%= quizes[i].pregunta %>
+			</a>
+			<a class="form-cell" href="/quizes/<%= quizes[i].id %>/edit">
+				<button>editar</button>
 			</a>
 		</li>
 	<% } %>
