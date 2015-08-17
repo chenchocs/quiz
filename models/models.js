@@ -36,6 +36,7 @@ sequelize.sync().then(function() {
 	Quiz.count().then(function(count) {
 		if (count === 0)  {
 			Quiz.create({
+				tema:			"humanidades",
 				pregunta:	"Capital de Italia",
 				respuesta:	"Roma"
 			}).then(function() {
@@ -43,6 +44,7 @@ sequelize.sync().then(function() {
 			});
 
 			Quiz.create({
+				tema:			"humanidades",
 				pregunta:	"Capital de Portugal",
 				respuesta:	"Lisboa"
 			}).then(function() {
@@ -50,10 +52,35 @@ sequelize.sync().then(function() {
 			});
 
 			Quiz.create({
+				tema:			"humanidades",
 				pregunta:	"Capital de Francia",
 				respuesta:	"París"
 			}).then(function() {
 				console.log("Base de datos trinicializada");
+			});
+
+			Quiz.create({
+				tema:			"ciencia",
+				pregunta:	"¿Quién Formuló la teoría de la gravedad?",
+				respuesta:	"Isaac Newton"
+			}).then(function() {
+				console.log("Base de datos trinicializada 2");
+			});
+
+			Quiz.create({
+				tema:			"tecnologia",
+				pregunta:	"¿Quién diseñó el ZX Spectrum?",
+				respuesta:	"Clive Sinclair"
+			}).then(function() {
+				console.log("Base de datos trinicializada 3");
+			});
+
+			Quiz.create({
+				tema:			"ciencia",
+				pregunta:	"¿Quién Formuló la teoría de la relatividad?",
+				respuesta:	"Albert Einstein"
+			}).then(function() {
+				console.log("Base de datos trinicializada 3");
 			});
 		}
 	});

@@ -9,10 +9,21 @@
 	</p>
 
 	<p class="form-row">
+		<label class="form-cell" for="tema">Temática</label>
+		<select class="form-cell" id="tema" name="quiz[tema]" value="<%= quiz.tema %>">
+			<option value="otro"				<% if (quiz.tema == "otro") {				%>selected<% } %> >Otro</option>
+			<option value="humanidades"	<% if (quiz.tema == "humanidades") {	%>selected<% } %> >Humanidades</option>
+			<option value="ocio"				<% if (quiz.tema == "ocio") {				%>selected<% } %> >Ocio</option>
+			<option value="ciencia"			<% if (quiz.tema == "ciencia") {			%>selected<% } %> >Ciencia</option>
+			<option value="tecnologia"		<% if (quiz.tema == "tecnologia") {		%>selected<% } %> >Tecnología</option>
+		</select>
+	</p>
+
+	<p class="form-row">
 		<a  class="form-cell" href="/quizes">
 			<button type="button">Cancelar</button>
 		</a>
-		<input  class="form-cell" type="submit" value="Salvar" />
+		<button class="form-cell" type="submit">Salvar</button>
 	</p>
 </div>
 

@@ -7,17 +7,27 @@
 
 <hr>
 
-<p>Lista de preguntas:</p>
 
 <ul class="form-table">
+	<class="form-row">
+		<span class="form-cell form-title">Temática</span>
+		<span class="form-cell form-title">Lista de preguntas:</span>
+		<span class="form-cell form-title"></span>
+		<span class="form-cell form-title"></span>
+	</li>
+
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<li class="form-row">
+			<span class="form-cell"><%= quizes[i].tema %></span>
 			<a class="form-cell" href="/quizes/<%= quizes[i].id %>">
 				<%= quizes[i].pregunta %>
 			</a>
 			<a class="form-cell" href="/quizes/<%= quizes[i].id %>/edit">
 				<button>editar</button>
 			</a>
+			<form class="form-cell" method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+				<button type="submit" onclick="confirm('Desea usted borrar <%= quizes[i].pregunta %>');">borrar</button>
+			</form>
 		</li>
 	<% } %>
 </ul>
